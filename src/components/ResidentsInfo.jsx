@@ -82,7 +82,7 @@ function Characters({ aldeanoss, selectedLocation }) {
                         })
                 }
             </div>
-            <div className="w-full flex space-b justify-center gap-20 mt-10 mb-10">
+            <div className="w-full flex space-b justify-center gap-8 mt-10 mb-10">
                 <button
                     disabled={currentPage === 1}
                     onClick={() => { setCurrentPage(currentPage - 1) }} className="m-3 border-white bg-opacity-25  border p-2 rounded-xl bg-black text-white colors"><i className='bx bx-chevron-left' ></i></button>

@@ -34,7 +34,7 @@ h2 {
 }
 
 .btn-wrapper {
-    max-width: 80vw;
+    mix-width: 80vw;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
@@ -43,6 +43,7 @@ h2 {
     backdrop-filter: blur(6px);
     border-radius: 30px;
     padding: 0 2rem;
+    min-width: 15rem;
     border: 1px solid white;
 }
 
