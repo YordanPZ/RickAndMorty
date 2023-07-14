@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    background-image: url(/RickAndMortyBG.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: 500ms;
+}
+
 h1 {
     font-family: 'Creepster', cursive;
     text-shadow: 0px 0px 20px rgba(218, 44, 175, 0.932);
@@ -55,6 +64,14 @@ h2 {
 
 .img {
     box-shadow: 0px 0px 20px rgba(83, 21, 121, 0.614);
+}
+
+.text {
+    font-family: 'VT323', monospace;
+}
+
+.btn {
+    border: 1px solid rgba(1, 1, 1, 0.261);
 }
 
 /** MODIFICACIONES DEL COMPONENTE EXTERNO*/

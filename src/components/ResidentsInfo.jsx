@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 
+
 function Characters({ aldeanoss, selectedLocation }) {
 
     const [characters, setCharacters] = useState([])
@@ -19,7 +20,7 @@ function Characters({ aldeanoss, selectedLocation }) {
     }, [selectedLocation])
 
 
-    const limitPage = 4
+    const limitPage = 10
 
     const totalPages = [Math.ceil(aldeanos?.length / limitPage)]
     const totalPagesArray = []
@@ -49,7 +50,7 @@ function Characters({ aldeanoss, selectedLocation }) {
 
     return (
         <div>
-            <div className="w-full flex justify-around gap-10 items-center mt-10 flex-wrap">
+            <div className="w-full flex justify-around gap-14 items-center mt-10 flex-wrap pl-10 pr-10">
                 {
                     noResidents ? <h3 className="text-4xl text-center text-gray-700">No Residents</h3> :
                         charactersToShow?.map((aldeano, index) => {
@@ -60,16 +61,16 @@ function Characters({ aldeanoss, selectedLocation }) {
                                     ? { backgroundColor: "rgba(87, 220, 123, 0.797)" }
                                     : { backgroundColor: "rgba(123, 123, 123, 0.564)" }
                             return (
-                                <div className="rounded-xl overflow-hidden flex flex-col justify-center h-auto resident mb-10 w-1/5 text-ellipsis whitespace-nowrap" key={index}>
-                                    <div className="w-full h-auto rounded- overflow-hidden bg-cover rounded-xl p-2 flex flex-col">
+                                <div className="rounded-xl overflow-hidden flex flex-col justify-center h-1/4 resident mb-10 w-80" key={index}>
+                                    <div className="w-full h-auto bg-cover rounded-xl p-2 flex flex-col">
                                         <img className="h-auto rounded-xl img border self-center" src={charactersToShow[index].image} alt="Character.png" />
                                     </div>
-                                    <div className="px-6 py-4 text-white ">
-                                        <div className="font-bold text-3xl tracking-widest text text-center mb-6 text-ellipsis whitespace-nowrap"><p className="text-ellipsis truncate">{charactersToShow[index].name}</p></div>
-                                        <ul className="list-disc [statusColor] list-inside text-2xl flex flex-col gap-4">
-                                            <li>Species: {charactersToShow[index].species}</li>
+                                    <div className="px-6 py-4 text-white">
+                                        <div className="font-bold text-3xl sm:text-4xl tracking-widest text-center mb-6 text-ellipsis whitespace-nowrap text"><p className="truncate hover:whitespace-normal">{charactersToShow[index].name}</p></div>
+                                        <ul className="list-disc list-inside text-2xl sm:text-3xl flex flex-col gap-4 text">
+                                            <li className="truncate hover:whitespace-normal">Species: {charactersToShow[index].species}</li>
                                             <li>Gender: {charactersToShow[index].gender}</li>
-                                            <li>Origin: {charactersToShow[index].origin?.name}</li>
+                                            <li className="truncate hover:whitespace-normal">Origin: {charactersToShow[index].origin?.name}</li>
                                         </ul>
                                     </div>
                                     <div className="px-6 pt-4 pb-4 flex justify-around">
@@ -81,7 +82,7 @@ function Characters({ aldeanoss, selectedLocation }) {
                         })
                 }
             </div>
-            <div className="w-full flex space-b justify-around mt-10 mb-10">
+            <div className="w-full flex space-b justify-center gap-20 mt-10 mb-10">
                 <button
                     disabled={currentPage === 1}
                     onClick={() => { setCurrentPage(currentPage - 1) }} className="m-3 border-white bg-opacity-25  border p-2 rounded-xl bg-black text-white colors"><i className='bx bx-chevron-left' ></i></button>
