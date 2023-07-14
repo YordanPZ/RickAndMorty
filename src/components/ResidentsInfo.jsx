@@ -46,7 +46,7 @@ function Characters({ aldeanoss, selectedLocation }) {
         })
     }, [aldeanos])
     const noResidents = charactersToShow.length === 0
-    console.log(noResidents)
+
     return (
         <div>
             <div className="w-full flex justify-around gap-10 items-center mt-10 flex-wrap">
@@ -60,12 +60,12 @@ function Characters({ aldeanoss, selectedLocation }) {
                                     ? { backgroundColor: "rgba(87, 220, 123, 0.797)" }
                                     : { backgroundColor: "rgba(123, 123, 123, 0.564)" }
                             return (
-                                <div className=" rounded-xl overflow-hidden shadow-lg flex flex-col justify-center h-auto resident mb-10" key={index}>
+                                <div className="rounded-xl overflow-hidden flex flex-col justify-center h-auto resident mb-10 w-1/5 text-ellipsis whitespace-nowrap" key={index}>
                                     <div className="w-full h-auto rounded- overflow-hidden bg-cover rounded-xl p-2 flex flex-col">
                                         <img className="h-auto rounded-xl img border self-center" src={charactersToShow[index].image} alt="Character.png" />
                                     </div>
                                     <div className="px-6 py-4 text-white ">
-                                        <div className="font-bold text-3xl tracking-widest text text-center mb-6">{charactersToShow[index].name}</div>
+                                        <div className="font-bold text-3xl tracking-widest text text-center mb-6 text-ellipsis whitespace-nowrap"><p className="text-ellipsis truncate">{charactersToShow[index].name}</p></div>
                                         <ul className="list-disc [statusColor] list-inside text-2xl flex flex-col gap-4">
                                             <li>Species: {charactersToShow[index].species}</li>
                                             <li>Gender: {charactersToShow[index].gender}</li>
@@ -84,7 +84,7 @@ function Characters({ aldeanoss, selectedLocation }) {
             <div className="w-full flex space-b justify-around mt-10 mb-10">
                 <button
                     disabled={currentPage === 1}
-                    onClick={() => { setCurrentPage(currentPage - 1) }} className="m-3 border-white bg-opacity-25  border p-2 rounded-xl bg-black text-white colors">BACK</button>
+                    onClick={() => { setCurrentPage(currentPage - 1) }} className="m-3 border-white bg-opacity-25  border p-2 rounded-xl bg-black text-white colors"><i className='bx bx-chevron-left' ></i></button>
                 <div className="btn-wrapper colors">
                     {
                         totalPagesArray.map((page, index) => (
@@ -93,7 +93,7 @@ function Characters({ aldeanoss, selectedLocation }) {
                         ))
                     }
                 </div>
-                <button disabled={currentPage >= totalPages} onClick={() => { setCurrentPage(currentPage + 1) }} className="m-3 border-white  border p-2 rounded-xl bg-black bg-opacity-25 text-white colors">NEXT</button>
+                <button disabled={currentPage >= totalPages} onClick={() => { setCurrentPage(currentPage + 1) }} className="m-3 border-white  border p-2 rounded-xl bg-black bg-opacity-25 text-white colors"><i className='bx bx-chevron-right'></i></button>
             </div>
         </div>
 

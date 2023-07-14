@@ -17,7 +17,7 @@ function Prueba({ changeLocation }) {
     useEffect(() => {
         setOptions([])
 
-        allLocations?.forEach(location => {
+        allLocations.map(location => {
             axios
                 .get(location)
                 .then((response) => {
@@ -25,21 +25,21 @@ function Prueba({ changeLocation }) {
                 })
                 .catch((error) => console.log(error))
         })
-    }, [changeLocation])
+    }, [])
 
     const locationsNames = Array.from(new Set(options.flat().map(location => location.name)))
 
-    const [value, setValue] = useState(null)
+    const [value, setValue] = useState("")
     changeLocation(value)
 
 
     return (
-        <div className="container-fluid flex justify-center">
+        <div className="container-fluid flex justify-center text-white">
             <Stack className="border-transparent" spacing={2} width={"250px"}>
                 <Autocomplete
                     className="text-white div"
                     options={locationsNames}
-                    renderInput={(params) => <TextField {...params} placeholder="Dimensions" />}
+                    renderInput={(params) => <TextField {...params} placeholder="Locations" />}
                     value={value}
                     onChange={(event, newValue) => setValue(newValue)}
                 />
