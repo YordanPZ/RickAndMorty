@@ -34,10 +34,10 @@ h2 {
 }
 
 .btn-wrapper {
-    mix-width: 80vw;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: scroll;
+    justify-content: center;
     gap: 1rem;
     background-color: rgba(0, 0, 0, 0.362);
     backdrop-filter: blur(6px);
@@ -70,7 +70,9 @@ h2 {
 .text {
     font-family: 'VT323', monospace;
 }
-
+.min{
+    min-height: 7rem;
+}
 .btn {
     border: 1px solid rgba(1, 1, 1, 0.261);
 }

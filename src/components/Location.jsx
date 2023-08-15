@@ -18,7 +18,7 @@ function Location({ Locations, selectedLocation }) {
     return (
         <div >
             <h2 className="font-bold text-4xl text-center mb-6 text-white tex tracking-widest sm:text-5xl">{locationToShow.name}</h2>
-            <div className="dimension flex flex-col gap-4 text-white container-fluid justify-around ml-2 mr-2 rounded-full p-4 text">
+            <div className="dimension flex flex-col gap-4 text-white container-fluid justify-around ml-2 mr-2 rounded-full p-4 text min">
                 <div className="flex gap-9 text-sm justify-around items-center text-center sm:text-xl xl:text-3xl">
                     <p><span className="font-bold">
                         <i className='bx bx-planet' ></i>
